@@ -4,13 +4,14 @@ apply from: 'checkstyle.gradle'
 buildscript {
     repositories {
         jcenter()
+        maven { url 'https://maven.google.com' }
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha2'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
         classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:1.1.0'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
@@ -19,12 +20,8 @@ allprojects {
     
     repositories {
         jcenter()
-    }
-
-    buildscript {
-        repositories {
-            jcenter()
-        }
+        maven { url 'https://maven.google.com' }
+        mavenCentral()
     }
 
     if (System.env.TRAVIS == 'true') {
